@@ -6,7 +6,7 @@
         "use": "@vercel/node"
       },
       {
-        "src": "./swagger.js",
+        "src": "swagger.js",
         "use": "@vercel/node"
       }
     ],
@@ -17,7 +17,7 @@
       },
       {
         "src": "/swagger",
-        "dest": "./swagger.js"
+        "dest": "/swagger.js"
       }
     ]
   }
