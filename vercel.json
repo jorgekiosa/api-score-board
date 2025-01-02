@@ -6,18 +6,18 @@
         "use": "@vercel/node"
       },
       {
-        "src": "swagger.js",
+        "src": "./swagger.js",
         "use": "@vercel/node"
       }
     ],
     "routes": [
       {
-        "src": "/api/(.*)",
+        "src": "/(.*)",
         "dest": "/src/index.js"
       },
       {
         "src": "/swagger",
-        "dest": "/swagger.js"
+        "dest": "./swagger.js"
       }
     ]
   }
