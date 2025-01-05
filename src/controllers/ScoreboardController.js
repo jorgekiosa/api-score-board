@@ -4,9 +4,9 @@ const apiResponse = require("../helpers/apiResponse");
 class TaskController {
   register(req, res) {
     try {
-      const { code, name, description, sport_type } = req.body;
+      const { code, name, description, sport_type,status } = req.body;
       database
-        .insert({ code, name, description,sport_type })
+        .insert({ code, name, description,sport_type,status })
         .table("scoreboard")
         .then((data) => {
           apiResponse.CreateSuccess(res, "Created successfully");
@@ -76,7 +76,7 @@ class TaskController {
   update(req, res) {
     try {
       const id = req.params.id;
-      const { code, name, description, sport_type } = req.body;
+      const { code, name, description, sport_type,status } = req.body;
 
       database
         .where({ id: id })
@@ -85,6 +85,7 @@ class TaskController {
           name: name,
           description: description,
           sport_type: sport_type,
+          status: status,
         })
         .table("scoreboard")
         .then((data) => {
